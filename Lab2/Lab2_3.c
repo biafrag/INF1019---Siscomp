@@ -9,9 +9,7 @@ int main (void)
     int segmento,i,j,indice,pid,status,segmento2,indice2;
 	int *matriz,*transposta;
 	segmento = shmget(IPC_PRIVATE, 16*sizeof(int),IPC_CREAT | S_IRUSR | S_IWUSR);  //Retorna id da área alocada
-	segmento2 = shmget(IPC_PRIVATE, 16*sizeof(int),IPC_CREAT | S_IRUSR | S_IWUSR);  //Retorna id da área alocada
-    matriz = (int*) shmat(segmento,0,0);
-	transposta = (int*) shmat(segmento2,0,0);
+	transposta = (int*) shmat(segmento,0,0);
 	printf("Matriz:\n");
 	for(i=0;i<16;i++)
 	{
@@ -66,10 +64,8 @@ int main (void)
 		printf("\n");
 	}
     //Libera memoria compartilhada do processo
-    shmdt(matriz);
 	shmdt(transposta);
     //Libera memória compartilhada
     shmctl(segmento,IPC_RMID,0);
-	shmctl(segmento2,IPC_RMID,0);
     return 0;
 }
