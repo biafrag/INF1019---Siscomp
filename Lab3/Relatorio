@@ -1,0 +1,13 @@
+- 1) ./Lab3 10 programafilho
+
+- 2) ./Lab3 10 ./sleep
+indo dormir...
+Acordei!
+Child 4217 terminated within 10 seconds com estado 0.
+
+3) kill -s USR2 4965
+
+4965
+Terminei a ligacao em 16 segundos
+Custo da Ligacao: 32 centavos
+
